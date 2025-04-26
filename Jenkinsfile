@@ -9,14 +9,14 @@ pipeline {
 
         DOCKERHUB_USERNAME = 'atishayjain01'
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials-id'   // Jenkins credentials ID
-        IMAGE_NAME = 'your-image-name'
+        IMAGE_NAME = 'cloud-assessment'
         IMAGE_TAG = 'latest'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: ''
+                git branch: 'main', url: 'https://github.com/Atishay-Jain01/CloudAssessment.git'
             }
         }
 
@@ -43,10 +43,10 @@ pipeline {
 
     post {
         success {
-            echo '✅ Docker image built and pushed to Docker Hub successfully!'
+            echo 'Docker image built and pushed to Docker Hub successfully!'
         }
         failure {
-            echo '❌ Build or push failed.'
+            echo 'Failed.'
         }
     }
 }
