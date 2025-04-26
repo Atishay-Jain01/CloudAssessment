@@ -6,6 +6,7 @@ pipeline {
         TERRAFORM_PATH = 'C:\\Program Files\\terraform_1.11.4_windows_amd64'
         AZURE_CLI_PATH = 'C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin'
         GIT_PATH = 'C:\\Program Files\\Git\\cmd'
+        PATH="${DOCKER_PATH};${TERRAFORM_PATH};${AZURE_CLI_PATH};${GIT_PATH};${PATH}"  
 
         DOCKERHUB_USERNAME = 'atishayjain01'
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials-id'   // Jenkins credentials ID
